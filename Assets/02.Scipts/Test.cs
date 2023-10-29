@@ -21,7 +21,7 @@ public class Test : MonoBehaviour
 
         if (GUILayout.Button("Logout"))
             GPGSBinder.Inst.Logout();
-        /*
+        
         if (GUILayout.Button("SaveCloud"))
             GPGSBinder.Inst.SaveCloud("mysave", "want data", success => log = $"{success}");
 
@@ -30,25 +30,19 @@ public class Test : MonoBehaviour
 
         if (GUILayout.Button("DeleteCloud"))
             GPGSBinder.Inst.DeleteCloud("mysave", success => log = $"{success}");
-
+        
         if (GUILayout.Button("ShowAchievementUI"))
             GPGSBinder.Inst.ShowAchievementUI();
 
-        if (GUILayout.Button("UnlockAchievement_one"))
-            GPGSBinder.Inst.UnlockAchievement(GPGSIds.achievement_one, success => log = $"{success}");
-
-        if (GUILayout.Button("UnlockAchievement_two"))
-            GPGSBinder.Inst.UnlockAchievement(GPGSIds.achievement_two, success => log = $"{success}");
-
-        if (GUILayout.Button("IncrementAchievement_three"))
-            GPGSBinder.Inst.IncrementAchievement(GPGSIds.achievement_three, 1, success => log = $"{success}");
+        if (GUILayout.Button("UnlockAchievement_Test"))
+            GPGSBinder.Inst.UnlockAchievement(GPGSIds.achievement_test, success => log = $"{success}");
 
         if (GUILayout.Button("ShowAllLeaderboardUI"))
             GPGSBinder.Inst.ShowAllLeaderboardUI();
 
         if (GUILayout.Button("ShowTargetLeaderboardUI_num"))
             GPGSBinder.Inst.ShowTargetLeaderboardUI(GPGSIds.leaderboard_num);
-
+        /*
         if (GUILayout.Button("ReportLeaderboard_num"))
             GPGSBinder.Inst.ReportLeaderboard(GPGSIds.leaderboard_num, 1000, success => log = $"{success}");
 

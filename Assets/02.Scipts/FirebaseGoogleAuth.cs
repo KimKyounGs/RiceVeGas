@@ -15,7 +15,7 @@ public class FirebaseGoogleAuth : MonoBehaviour
         PlayGamesPlatform.InitializeInstance(new PlayGamesClientConfiguration.Builder().Build());
         PlayGamesPlatform.DebugLogEnabled = true;
         PlayGamesPlatform.Activate();
- // Google Play Games 활성화
+        // Google Play Games 활성화
     }
  
  

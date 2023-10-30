@@ -42,6 +42,8 @@ public class Test : MonoBehaviour
 
         if (GUILayout.Button("ShowTargetLeaderboardUI_num"))
             GPGSBinder.Inst.ShowTargetLeaderboardUI(GPGSIds.leaderboard_num);
+        
+
         /*
         if (GUILayout.Button("ReportLeaderboard_num"))
             GPGSBinder.Inst.ReportLeaderboard(GPGSIds.leaderboard_num, 1000, success => log = $"{success}");

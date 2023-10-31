@@ -1,4 +1,3 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +8,7 @@ using GooglePlayGames.BasicApi;
 public class FirebaseGoogleAuth : MonoBehaviour
 {
     public Text email;
- 
+
     void Start()
     {
         PlayGamesPlatform.InitializeInstance(new PlayGamesClientConfiguration.Builder().Build());
@@ -17,8 +16,7 @@ public class FirebaseGoogleAuth : MonoBehaviour
         PlayGamesPlatform.Activate();
         // Google Play Games 활성화
     }
- 
- 
+
     public void TryGoogleLogin()
     {
         if (!Social.localUser.authenticated) // 로그인 되어 있지 않다면
@@ -36,8 +34,7 @@ public class FirebaseGoogleAuth : MonoBehaviour
             });
         }
     }
- 
- 
+
     public void TryGoogleLogout()
     {
         if (Social.localUser.authenticated) // 로그인 되어 있다면
@@ -46,4 +43,5 @@ public class FirebaseGoogleAuth : MonoBehaviour
             email.text = "Logout";
         }
     }
+
 }

@@ -1,9 +1,2 @@
 lastUpgrade=01014
 proj.pluginVersion=0.10.14
-proj.AppId=392049533314
-and.BundleId=com.KKIKSJ.RiceVegas
-proj.classDir=Assets
-proj.ConstantsClassName=GPGSIds
-and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0a%3c%21--Google+Play+game+services+IDs.+Save+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.--%3e%0a%3cresources%3e%0a++%3c%21--app_id--%3e%0a++%3cstring+name%3d%22app_id%22+translatable%3d%22false%22%3e392049533314%3c%2fstring%3e%0a++%3c%21--package_name--%3e%0a++%3cstring+name%3d%22package_name%22+translatable%3d%22false%22%3ecom.KKIKSJ.RiceVegas%3c%2fstring%3e%0a++%3c%21--achievement+Test--%3e%0a++%3cstring+name%3d%22achievement_test%22+translatable%3d%22false%22%3eCgkIgsPkv7QLEAIQAg%3c%2fstring%3e%0a++%3c%21--event+event--%3e%0a++%3cstring+name%3d%22event_event%22+translatable%3d%22false%22%3eCgkIgsPkv7QLEAIQBA%3c%2fstring%3e%0a++%3c%21--leaderboard+num--%3e%0a++%3cstring+name%3d%22leaderboard_num%22+translatable%3d%22false%22%3eCgkIgsPkv7QLEAIQAw%3c%2fstring%3e%0a%3c%2fresources%3e
-and.ClientId=392049533314-u0clpn2mg0j64oa2r2apk97chrul8l8f.apps.googleusercontent.com
-android.SetupDone=true

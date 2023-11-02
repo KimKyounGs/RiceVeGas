@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "678562163434",
+    "project_id": "ricevegas-96606",
+    "storage_bucket": "ricevegas-96606.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678562163434:android:8d8fa8a71e279ead4ec593",
+        "android_client_info": {
+          "package_name": "com.KKIKSJ.RiceVegas"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678562163434-4isuvt92jqvn0q1o9osb5kmgjq1qcs0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIhuBDsNYAS1jVdfkJc3lHBjepTz-A898"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678562163434-4isuvt92jqvn0q1o9osb5kmgjq1qcs0u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

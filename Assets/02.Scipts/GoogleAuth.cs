@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using GooglePlayGames;
 using GooglePlayGames.BasicApi;
  
-public class FirebaseGoogleAuth : MonoBehaviour
+public class GoogleAuth : MonoBehaviour
 {
     public Text email;
 

@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/01.Scenes/GoogleLogin.unity
+    path: Assets/01.Scenes/Intro.unity
     guid: 9bc3659811d154325a96e81930acfe30
   - enabled: 0
     path: Assets/Photon/PhotonUnityNetworking/Demos/DemoHub/DemoHub-Scene.unity

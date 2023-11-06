@@ -34,7 +34,7 @@ public class GoogleAuth : MonoBehaviour
     {
         if (!Social.localUser.authenticated) // 로그인 되어 있지 않다면
         {
-            SceneManager.LoadScene("GameMap");
+            SceneManager.LoadScene("LobbyScene");
             Social.localUser.Authenticate(success => // 로그인 시도
             {
                 if (success) // 성공하면

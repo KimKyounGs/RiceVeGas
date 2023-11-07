@@ -27,10 +27,14 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         Debug.Log("Joined Lobby!");
     }
 
-    public void CreateRoomOption()
+    public void OnCreateRoomOption()
     {
-        roomOption.SetActive(true);
-        
+        SettingUI(1, true);
+    }
+
+    public void OffCreateRoomOption() 
+    {
+        SettingUI(1, false);
     }
     // 방 만들기 버튼을 위한 메서드
     public void CreateRoom()
@@ -57,5 +61,18 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
         Debug.Log("Room Creation Failed: " + message);
+    }
+
+    public void SettingUI(int type, bool flag) 
+    {
+        switch(type) 
+        {
+            // RoomCreate 옵션
+            case 1: 
+            {
+                roomOption.SetActive(flag);
+                break;    
+            }
+        }
     }
 }

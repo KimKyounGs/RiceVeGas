@@ -10,6 +10,8 @@ public class Money
     [Tooltip("돈 프리팹")]
     private GameObject _prefab;
 
+    [Tooltip("돈 뒤집을 것이냐 ?")]
+    private bool _bFlip;
     // 카드 분배.
     public void DistributeMoney() 
     {

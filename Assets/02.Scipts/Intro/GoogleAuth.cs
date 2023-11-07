@@ -59,9 +59,4 @@ public class GoogleAuth : MonoBehaviour
         }
     }
 
-    public void SettingUI(int type) 
-    {
-        
-    }
-
 }

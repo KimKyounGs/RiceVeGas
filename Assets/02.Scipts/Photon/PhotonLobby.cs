@@ -8,8 +8,8 @@ using UnityEngine.UI;
 
 public class PhotonLobby : MonoBehaviourPunCallbacks
 {
-    public GameObject roomOption;
-    public InputField roomNameInputField;
+    [SerializeField] private GameObject roomOption;
+    [SerializeField] private InputField roomNameInputField;
 
     private void Start()
     {
@@ -27,28 +27,30 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         Debug.Log("Joined Lobby!");
     }
 
-    public void OnCreateRoomOption()
+    public void OnCreateRoomButtonClicked()
     {
         SettingUI(1, true);
     }
 
-    public void OffCreateRoomOption() 
+    public void OFFCreateRoomButtonClicked() 
     {
         SettingUI(1, false);
     }
     // 방 만들기 버튼을 위한 메서드
     public void CreateRoom()
     {
-        // 방의 최대 플레이어 수, 방이 공개적으로 검색 가능한지 여부, 방에 입장할 수 있는 조건 등을 설정할 수 있습니다.
-
-        RoomOptions roomOptions = new RoomOptions();
-        roomOptions.MaxPlayers = 6; // 방의 최대 플레이어 수 설정
-        
-        // 무작위 방 이름을 생성합니다.
-        string roomName = "Room " + Random.Range(1000, 10000);
-        
-        // 방 만들기 시도
-        PhotonNetwork.CreateRoom(roomName, roomOptions);
+        string roomName = roomNameInputField.text; // InputField로부터 방 제목을 가져옵니다.
+        if (!string.IsNullOrEmpty(roomName)) // 방 제목이 비어있지 않은 경우에만 방을 생성합니다.
+        {
+            // 방의 최대 플레이어 수, 방이 공개적으로 검색 가능한지 여부, 방에 입장할 수 있는 조건 등을 설정할 수 있습니다.
+            RoomOptions roomOptions = new RoomOptions();
+            roomOptions.MaxPlayers = 6; // 방의 최대 플레이어 수 설정
+            PhotonNetwork.CreateRoom(roomName, roomOptions); // 방을 생성합니다.
+        }
+        else
+        {
+            Debug.LogError("Room name is empty or null. Please enter a room name."); // 방 제목이 비어있는 경우 오류 메시지를 출력합니다.
+        }
     }
 
     // OnCreatRoom, OnCreateRoomFailed는 포톤의 콜백함수이다.

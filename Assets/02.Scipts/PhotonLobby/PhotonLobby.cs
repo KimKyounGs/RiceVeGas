@@ -11,6 +11,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     [SerializeField] private GameObject roomOption;
     [SerializeField] private InputField roomNameInputField;
 
+    private bool bPlayerDoing;
     private void Start()
     {
         PhotonNetwork.ConnectUsingSettings(); // 설정에 따라 Photon 서버에 연결 --> 마스터 서버에 접속.
@@ -25,18 +26,24 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     public override void OnJoinedLobby()
     {
         Debug.Log("Joined Lobby!");
+        bPlayerDoing = false;
     }
 
     public void OnCreateRoomButtonClicked()
     {
-        SettingUI(1, true);
+        if (!bPlayerDoing)
+        {
+            SettingUI(1, true);
+            bPlayerDoing = true;
+        }
     }
 
     public void OFFCreateRoomButtonClicked() 
     {
         SettingUI(1, false);
+        bPlayerDoing = false;
     }
-    // 방 만들기 버튼을 위한 메서드
+    
     public void CreateRoom()
     {
         string roomName = roomNameInputField.text; // InputField로부터 방 제목을 가져옵니다.

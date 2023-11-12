@@ -8,19 +8,31 @@ using UnityEngine.UI;
 
 public class PhotonLobby : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private GameObject roomOption;
+    [SerializeField] private GameObject roomOptionObj;
     [SerializeField] private InputField roomNameInputField;
+
+    [SerializeField] private GameObject findRoomObj;
+    [SerializeField] private InputField findRoomNameInputField;
+    [SerializeField] private Text findRoomAnnounce;
 
     private bool bPlayerDoing;
     private void Start()
     {
-        PhotonNetwork.ConnectUsingSettings(); // ¼³Á¤¿¡ µû¶ó Photon ¼­¹ö¿¡ ¿¬°á --> ¸¶½ºÅÍ ¼­¹ö¿¡ Á¢¼Ó.
+        PhotonNetwork.ConnectUsingSettings(); // ì„¤ì •ì— ë”°ë¼ Photon ì„œë²„ì— ì—°ê²° --> ë§ˆìŠ¤í„° ì„œë²„ì— ì ‘ì†. d
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            
+        }
     }
 
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Photon Server!");
-        PhotonNetwork.JoinLobby(); // ¸¶½ºÅÍ ¼­¹ö¿¡ ¿¬°áµÇ¸é ·Îºñ¿¡ Á¶ÀÎ
+        PhotonNetwork.JoinLobby(); // ë§ˆìŠ¤í„° ì„œë²„ì— ì—°ê²°ë˜ë©´ ë¡œë¹„ì— ì¡°ì¸
     }
 
     public override void OnJoinedLobby()
@@ -35,52 +47,120 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         {
             SettingUI(1, true);
             bPlayerDoing = true;
+
+            roomNameInputField.text = "";
         }
     }
 
-    public void OFFCreateRoomButtonClicked() 
+    public void OffCreateRoomButtonClicked() 
     {
-        SettingUI(1, false);
-        bPlayerDoing = false;
+        if (bPlayerDoing)
+        {
+            SettingUI(1, false);
+            bPlayerDoing = false;
+        }
     }
     
     public void CreateRoom()
     {
-        string roomName = roomNameInputField.text; // InputField·ÎºÎÅÍ ¹æ Á¦¸ñÀ» °¡Á®¿É´Ï´Ù.
-        if (!string.IsNullOrEmpty(roomName)) // ¹æ Á¦¸ñÀÌ ºñ¾îÀÖÁö ¾ÊÀº °æ¿ì¿¡¸¸ ¹æÀ» »ı¼ºÇÕ´Ï´Ù.
+        string roomName = roomNameInputField.text; // InputFieldë¡œë¶€í„° ë°© ì œëª©ì„ ê°€ì ¸ì˜µë‹ˆë‹¤.
+        if (!string.IsNullOrEmpty(roomName)) // ë°© ì œëª©ì´ ë¹„ì–´ìˆì§€ ì•Šì€ ê²½ìš°ì—ë§Œ ë°©ì„ ìƒì„±í•©ë‹ˆë‹¤.
         {
-            // ¹æÀÇ ÃÖ´ë ÇÃ·¹ÀÌ¾î ¼ö, ¹æÀÌ °ø°³ÀûÀ¸·Î °Ë»ö °¡´ÉÇÑÁö ¿©ºÎ, ¹æ¿¡ ÀÔÀåÇÒ ¼ö ÀÖ´Â Á¶°Ç µîÀ» ¼³Á¤ÇÒ ¼ö ÀÖ½À´Ï´Ù.
+            // ë°©ì˜ ìµœëŒ€ í”Œë ˆì´ì–´ ìˆ˜, ë°©ì´ ê³µê°œì ìœ¼ë¡œ ê²€ìƒ‰ ê°€ëŠ¥í•œì§€ ì—¬ë¶€, ë°©ì— ì…ì¥í•  ìˆ˜ ìˆëŠ” ì¡°ê±´ ë“±ì„ ì„¤ì •í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
             RoomOptions roomOptions = new RoomOptions();
-            roomOptions.MaxPlayers = 6; // ¹æÀÇ ÃÖ´ë ÇÃ·¹ÀÌ¾î ¼ö ¼³Á¤
-            PhotonNetwork.CreateRoom(roomName, roomOptions); // ¹æÀ» »ı¼ºÇÕ´Ï´Ù.
+            roomOptions.MaxPlayers = 6; // ë°©ì˜ ìµœëŒ€ í”Œë ˆì´ì–´ ìˆ˜ ì„¤ì •
+            PhotonNetwork.CreateRoom(roomName, roomOptions); // ë°©ì„ ìƒì„±í•©ë‹ˆë‹¤.
         }
         else
         {
-            Debug.LogError("Room name is empty or null. Please enter a room name."); // ¹æ Á¦¸ñÀÌ ºñ¾îÀÖ´Â °æ¿ì ¿À·ù ¸Ş½ÃÁö¸¦ Ãâ·ÂÇÕ´Ï´Ù.
+            Debug.LogError("Room name is empty or null. Please enter a room name."); // ë°© ì œëª©ì´ ë¹„ì–´ìˆëŠ” ê²½ìš° ì˜¤ë¥˜ ë©”ì‹œì§€ë¥¼ ì¶œë ¥í•©ë‹ˆë‹¤.
         }
     }
 
-    // OnCreatRoom, OnCreateRoomFailed´Â Æ÷ÅæÀÇ Äİ¹éÇÔ¼öÀÌ´Ù.
+    // OnCreatRoom, OnCreateRoomFailedëŠ” í¬í†¤ì˜ ì½œë°±í•¨ìˆ˜ì´ë‹¤.
     public override void OnCreatedRoom()
     {
         Debug.Log("Created Room: " + PhotonNetwork.CurrentRoom.Name);
     }
 
-    // ¹æ ¸¸µé±â¿¡ ½ÇÆĞÇÑ °æ¿ì
+    // ë°© ë§Œë“¤ê¸°ì— ì‹¤íŒ¨í•œ ê²½ìš°
     public override void OnCreateRoomFailed(short returnCode, string message)
     {
         Debug.Log("Room Creation Failed: " + message);
+    }
+
+    public void OnFindRoomButtonClicked()
+    {
+        if (!bPlayerDoing)
+        {
+            SettingUI(2, true);
+            bPlayerDoing = true;
+
+            findRoomAnnounce.text = "";
+            findRoomNameInputField.text = "";
+        }
+    }
+
+    public void OffFindRoomButtonClicked()
+    {
+        if (bPlayerDoing)
+        {
+            SettingUI(2, false);
+            bPlayerDoing = false;
+        }
+    }
+
+    public void FindRoom()
+    {
+        string findRoomName = findRoomNameInputField.text; 
+        if (!string.IsNullOrEmpty(findRoomName))
+        {
+            PhotonNetwork.JoinRoom(findRoomName); // í¬í†¤ ë°©ì— ì…ì¥ì„ ì‹œë„í•©ë‹ˆë‹¤.
+        }
+        else 
+        {
+            findRoomAnnounce.text = "ë°©ì˜ ì œëª©ì„ ì…ë ¥í•´ì£¼ì„¸ìš”.";
+        }
+    }
+    
+    // í•´ë‹¹ ë°©ì— ì„±ê³µì ìœ¼ë¡œ ì…ì¥í–ˆì„ ë•Œ í˜¸ì¶œë©ë‹ˆë‹¤.
+    public override void OnJoinedRoom()
+    {
+        Debug.Log("ë°©ì— ì…ì¥í–ˆìŠµë‹ˆë‹¤.");
+        findRoomAnnounce.text = "";
+    }
+
+    // ë°©ì— ì…ì¥í•˜ì§€ ëª»í–ˆì„ ë•Œ í˜¸ì¶œë©ë‹ˆë‹¤.
+    public override void OnJoinRoomFailed(short returnCode, string message)
+    {
+        Debug.Log("ë°©ì— ì…ì¥í•˜ëŠ” ë° ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤: " + message);
+        findRoomAnnounce.text = "í•´ë‹¹ ë°©ì´ ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤ !";
+    }
+
+    // ë°© ëª©ë¡ì´ ì—…ë°ì´íŠ¸ë  ë•Œë§ˆë‹¤ í˜¸ì¶œë˜ëŠ” ì½œë°±
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        Debug.Log("Update RommList");
+        foreach (RoomInfo room in roomList)
+        {
+            Debug.Log("ë°© ì´ë¦„: " + room.Name + ", í”Œë ˆì´ì–´ ìˆ˜: " + room.PlayerCount + "/" + room.MaxPlayers);
+        }
     }
 
     public void SettingUI(int type, bool flag) 
     {
         switch(type) 
         {
-            // RoomCreate ¿É¼Ç
+            // RoomCreate ì˜µì…˜
             case 1: 
             {
-                roomOption.SetActive(flag);
+                roomOptionObj.SetActive(flag);
                 break;    
+            }
+            case 2:
+            {
+                findRoomObj.SetActive(flag);
+                break;
             }
         }
     }

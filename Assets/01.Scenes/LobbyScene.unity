@@ -1066,7 +1066,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Find Room
+  m_Text: "\uBC29 \uCC3E\uAE30"
 --- !u!222 &423165013
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2879,7 +2879,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Create Room
+  m_Text: "\uBC29 \uB9CC\uB4E4\uAE30"
 --- !u!222 &2125615185
 CanvasRenderer:
   m_ObjectHideFlags: 0

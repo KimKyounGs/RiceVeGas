@@ -8,7 +8,10 @@ using UnityEngine.UI;
 
 public class PhotonLobby : MonoBehaviourPunCallbacks
 {
-    [SerializeField] private GameObject roomOptionObj;
+
+    [SerializeField] private GameObject gameStartObj;
+
+    [SerializeField] private GameObject roomCreatOptionObj;
     [SerializeField] private InputField roomNameInputField;
 
     [SerializeField] private GameObject findRoomObj;
@@ -25,10 +28,13 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            
+            // 
         }
     }
 
+    /// <summary>
+    /// 포톤 연결
+    /// </summary>
     public override void OnConnectedToMaster()
     {
         Debug.Log("Connected to Photon Server!");
@@ -41,6 +47,42 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         bPlayerDoing = false;
     }
 
+    /// <summary>
+    /// 방 목록 보기.
+    /// </summary>
+    /// <param name="roomList"></param>
+
+    // 방 목록이 업데이트될 때마다 호출되는 콜백
+    public override void OnRoomListUpdate(List<RoomInfo> roomList)
+    {
+        Debug.Log("방 리스트 보기.");
+        foreach (RoomInfo room in roomList)
+        {
+            Debug.Log("방 이름: " + room.Name + ", 플레이어 수: " + room.PlayerCount + "/" + room.MaxPlayers);
+        }
+    }
+
+    public void OnGameStartButtonClicked()
+    {
+        if (!bPlayerDoing)
+        {
+            SettingUI(0, true);
+            bPlayerDoing = true;
+        }
+    }
+
+    public void OffGameStartButtonClicked()
+    {
+        if (bPlayerDoing)
+        {
+            SettingUI(0, false);
+            bPlayerDoing = false;
+        }
+    }
+
+    /// <summary>
+    /// 방 만들기.
+    /// </summary>
     public void OnCreateRoomButtonClicked()
     {
         if (!bPlayerDoing)
@@ -88,7 +130,10 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     {
         Debug.Log("Room Creation Failed: " + message);
     }
-
+    
+    /// <summary>
+    /// 방 찾기.
+    /// </summary>
     public void OnFindRoomButtonClicked()
     {
         if (!bPlayerDoing)
@@ -96,6 +141,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
             SettingUI(2, true);
             bPlayerDoing = true;
 
+            // 초기화
             findRoomAnnounce.text = "";
             findRoomNameInputField.text = "";
         }
@@ -119,7 +165,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         }
         else 
         {
-            findRoomAnnounce.text = "방의 제목을 입력해주세요.";
+            findRoomAnnounce.text = "방의 제목을 입력해주세요!";
         }
     }
     
@@ -137,26 +183,26 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
         findRoomAnnounce.text = "해당 방이 존재하지 않습니다 !";
     }
 
-    // 방 목록이 업데이트될 때마다 호출되는 콜백
-    public override void OnRoomListUpdate(List<RoomInfo> roomList)
-    {
-        Debug.Log("Update RommList");
-        foreach (RoomInfo room in roomList)
-        {
-            Debug.Log("방 이름: " + room.Name + ", 플레이어 수: " + room.PlayerCount + "/" + room.MaxPlayers);
-        }
-    }
-
+    /// <summary>
+    /// UI 담당.
+    /// </summary>
     public void SettingUI(int type, bool flag) 
     {
         switch(type) 
         {
-            // RoomCreate 옵션
+            // RoomList On/Off
+            case 0:
+            {
+                gameStartObj.SetActive(flag);
+                break;
+            }
+            // roomCreat On/Off
             case 1: 
             {
-                roomOptionObj.SetActive(flag);
+                roomCreatOptionObj.SetActive(flag);
                 break;    
             }
+            // findRoom On/Off
             case 2:
             {
                 findRoomObj.SetActive(flag);

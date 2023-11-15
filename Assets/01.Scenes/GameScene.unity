@@ -253,7 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startPanel: {fileID: 1745057818}
-  GamePanel: {fileID: 1915406117}
+  GamePanel: {fileID: 2661973780519786637, guid: b7bf8188eab4c49469f0fb3e3c21c3d5, type: 3}
 --- !u!1 &244034666
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,6 +1221,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2661973780519786638, guid: b7bf8188eab4c49469f0fb3e3c21c3d5, type: 3}
   m_PrefabInstance: {fileID: 2661973780823531432}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1915406119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915406117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cff51847c3094ea68592d7c7aa314c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2109458543
 GameObject:
   m_ObjectHideFlags: 0

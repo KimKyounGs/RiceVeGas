@@ -123,6 +123,9 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     public override void OnCreatedRoom()
     {
         Debug.Log("Created Room: " + PhotonNetwork.CurrentRoom.Name);
+
+        // 방 생성 후 게임 씬 로드 (각각 방 마다 씬을 따로 관리)
+        PhotonNetwork.LoadLevel("GameScene");
     }
 
     // 방 만들기에 실패한 경우

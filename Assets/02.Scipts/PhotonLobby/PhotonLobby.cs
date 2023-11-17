@@ -176,6 +176,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     public override void OnJoinedRoom()
     {
         Debug.Log("방에 입장했습니다.");
+        PhotonNetwork.LoadLevel("GameScene");
         findRoomAnnounce.text = "";
     }
 

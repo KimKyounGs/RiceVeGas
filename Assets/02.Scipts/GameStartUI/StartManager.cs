@@ -4,6 +4,8 @@ using System.Runtime.InteropServices.ComTypes;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
+using Photon.Realtime;
 
 public class StartManager : MonoBehaviour
 {
@@ -22,6 +24,18 @@ public class StartManager : MonoBehaviour
         {
             RestartGame();
             startPanel.SetActive(true);
+        }
+
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            if (PhotonNetwork.IsMasterClient)
+            {
+                Debug.Log("내가 방장이다.");// 현재 플레이어가 방장일 때 수행할 작업
+            }
+            else 
+            {
+                Debug.Log("내가 방장이 아니다.");
+            }
         }
     }
 

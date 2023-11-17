@@ -25,11 +25,8 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     }
 
     private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            // 
-        }
+    { 
+        
     }
 
     /// <summary>

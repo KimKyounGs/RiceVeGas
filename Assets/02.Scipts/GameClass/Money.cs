@@ -4,17 +4,13 @@ using UnityEngine;
 
 public class Money
 {
-    [Tooltip("µ· ¾ó¸¶ ?")]
+    [Tooltip("ê°€ê²©")]
     private int _price;
 
-    [Tooltip("µ· ÇÁ¸®ÆÕ")]
+    [Tooltip("í”„ë¦¬íŒ¹")]
     private GameObject _prefab;
 
-    [Tooltip("µ· µÚÁýÀ» °ÍÀÌ³Ä ?")]
+    [Tooltip("ë’¤ì§‘ì–´ì ¸ ìžˆëŠ”ê°€?")]
     private bool _bFlip;
-    // Ä«µå ºÐ¹è.
-    public void DistributeMoney() 
-    {
-        
-    }
+
 }

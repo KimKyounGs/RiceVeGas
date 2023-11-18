@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player 
 {
+    
     // 할 수 있는가?
     public bool CanTurn() 
     {

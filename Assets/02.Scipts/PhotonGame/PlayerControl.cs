@@ -9,7 +9,7 @@ public class PlayerControl : MonoBehaviourPun
 {
     private void Start()
     {
-        Debug.Log("°ÔÀÓ Á¢¼Ó ÇŞÀ» ¶§");
+        Debug.Log("ê²Œì„ ì ‘ì† í–‡ì„ ë•Œ");
         GameObject PI = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
     }
 
@@ -27,4 +27,5 @@ public class PlayerControl : MonoBehaviourPun
         Debug.Log("Received message: " + message);
     }
 
+    
 }

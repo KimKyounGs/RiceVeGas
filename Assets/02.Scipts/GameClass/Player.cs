@@ -4,20 +4,7 @@ using UnityEngine;
 
 public class Player 
 {
+    string _name;
     
-    // 할 수 있는가?
-    public bool CanTurn() 
-    {
-        /*
-        if () 
-        {
-            return true;
-        }
-        else 
-        {
-            return false;
-        }
-        */
-        return true;
-    }
+    
 }

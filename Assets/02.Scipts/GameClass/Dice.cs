@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Dice
 {
+    [Tooltip("주사위 프리팹")]
+    private GameObject _obj;
+
     [Tooltip("주사위 색깔")]
     private int _color;
 

@@ -6,10 +6,19 @@ using Photon.Realtime;
 using UnityEngine;
 
 
-public class GameDirector : MonoBehaviour
+public class GameDirector : MonoBehaviourPun
 {
+    public static GameDirector instance;
+
+    [SerializeField] private List<GameObject> dice = new List<GameObject>();
+
     private void Start()
     {
-        PhotonNetwork.ConnectUsingSettings(); // 설정에 따라 Photon 서버에 연결 --> 마스터 서버에 접속. d
+        instance = this;
+    }
+
+    public void DistributeDice()
+    {
+        
     }
 }

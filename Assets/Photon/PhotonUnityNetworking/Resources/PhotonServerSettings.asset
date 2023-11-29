@@ -41,6 +41,7 @@ MonoBehaviour:
   - RespawnSpaceship
   - DisplayMessage
   - DisableReadyUI
+  - CloseReadyPanel
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

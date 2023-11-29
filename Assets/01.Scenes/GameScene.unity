@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.3069224, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1868,9 +1868,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87aa0405f1eaa14ca7e0c984430778f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  photonView: {fileID: 0}
+  PV: {fileID: 0}
   Button: {fileID: 1092085181}
   startPanel: {fileID: 1745057818}
+  ReadyPanel: {fileID: 678208677}
   InGamePanel: {fileID: 460369956}
 --- !u!1 &1100125204
 GameObject:
@@ -2677,18 +2678,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1092085185}
-        m_TargetAssemblyTypeName: GameStartUIButton, Assembly-CSharp
-        m_MethodName: StartGameHandler
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1092085181}
         m_TargetAssemblyTypeName: GameStartUIButton, Assembly-CSharp
         m_MethodName: 
@@ -3540,9 +3529,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87aa0405f1eaa14ca7e0c984430778f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  photonView: {fileID: 0}
+  PV: {fileID: 0}
   Button: {fileID: 1996428537}
   startPanel: {fileID: 678208677}
+  ReadyPanel: {fileID: 0}
   InGamePanel: {fileID: 0}
 --- !u!114 &1996428540
 MonoBehaviour:

@@ -23,7 +23,7 @@ public class GameStartUIButton : MonoBehaviourPun
         //StartManager gamePlayScript = gamePlayObject.GetComponent<StartManager>();
         //gamePlayScript.ResumeTime();
 
-        photonView.RPC("DisableReadyUI", RpcTarget.All);
+        PV.RPC("CloseReadyPanel", RpcTarget.All);
     }
 
     public void ExitGameHandler()
@@ -32,7 +32,7 @@ public class GameStartUIButton : MonoBehaviourPun
     }
 
     [PunRPC]
-    private void CloseReadyPanel()
+    public void CloseReadyPanel()
     {
         // "Ready" ∆–≥Œ¿ª ¥›¿Ω
         ReadyPanel.SetActive(false);

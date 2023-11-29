@@ -5,7 +5,7 @@ using Photon.Realtime;
 using UnityEngine;
 
 
-public class PlayerControl : MonoBehaviourPun
+public class PlayerManager : MonoBehaviourPun
 {
     private void Start()
     {

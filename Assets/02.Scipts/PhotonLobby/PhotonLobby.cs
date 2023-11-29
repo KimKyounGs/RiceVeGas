@@ -19,6 +19,7 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     [SerializeField] private Text findRoomAnnounce;
 
     private bool bPlayerDoing;
+    private bool isRoomCreator = false;
     private void Start()
     {
         PhotonNetwork.ConnectUsingSettings(); // 설정에 따라 Photon 서버에 연결 --> 마스터 서버에 접속. d
@@ -121,6 +122,8 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     {
         Debug.Log("Created Room: " + PhotonNetwork.CurrentRoom.Name);
 
+        Debug.Log("방을 만듭니다.");
+        isRoomCreator = true; // 방을 만든 사용자로 설정
         // 방 생성 후 게임 씬 로드 (각각 방 마다 씬을 따로 관리)
         PhotonNetwork.LoadLevel("GameScene");
     }
@@ -172,9 +175,17 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     // 해당 방에 성공적으로 입장했을 때 호출됩니다.
     public override void OnJoinedRoom()
     {
-        Debug.Log("방에 입장했습니다.");
-        PhotonNetwork.LoadLevel("GameScene");
-        findRoomAnnounce.text = "";
+        if (isRoomCreator)
+        {
+            Debug.Log("방을 만든 사용자가 방에 입장했습니다.");
+            findRoomAnnounce.text = "";
+        }
+        else
+        {
+            Debug.Log("다른 사용자가 방에 입장했습니다.");
+            PhotonNetwork.LoadLevel("GameScene");
+            // 다른 사용자의 로직 처리
+        }
     }
 
     // 방에 입장하지 못했을 때 호출됩니다.

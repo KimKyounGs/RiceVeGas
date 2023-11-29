@@ -15,11 +15,12 @@ public class PlayerManager : MonoBehaviourPun
     public static int count = 0;
     private void Start()
     {
-        Debug.Log("게임 접속 햇을 때");
-
-        count++;
-        Debug.Log(count);
-        GameObject PI = PhotonNetwork.Instantiate("Player", Vector3.zero, Quaternion.identity);
+        PlayerManager[] scripts = FindObjectsOfType<PlayerManager>();
+        Debug.Log("씬에 존재하는 MyScript 개수: " + scripts[0]);
+        if (PhotonNetwork.IsConnectedAndReady)
+        {
+            Debuging();
+        }
     }
 
     private void Update()
@@ -35,5 +36,10 @@ public class PlayerManager : MonoBehaviourPun
     {
         Debug.Log("Received message: " + message);
     }
-
+       
+    void Debuging()
+    {
+        count++;
+        Debug.Log("count = " + count);
+    }
 }

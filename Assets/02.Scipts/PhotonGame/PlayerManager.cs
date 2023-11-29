@@ -12,6 +12,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviourPun
 {
     List<Player> playerList = new List<Player>();
+    public PhotonView PV;
 
     private void Start()
     {
@@ -25,7 +26,7 @@ public class PlayerManager : MonoBehaviourPun
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
-            photonView.RPC("DisplayMessage", RpcTarget.All, "Hello, World!");
+            PV.RPC("DisplayMessage", RpcTarget.All, "Hello, World!");
         }
     }
 
@@ -34,6 +35,7 @@ public class PlayerManager : MonoBehaviourPun
     {
         Debug.Log("Received message: " + message);
     }
+
     void Spawn()
     {
         PhotonView[] photonViews = FindObjectsOfType<PhotonView>();

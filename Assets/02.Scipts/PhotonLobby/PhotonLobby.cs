@@ -172,9 +172,8 @@ public class PhotonLobby : MonoBehaviourPunCallbacks
     // 해당 방에 성공적으로 입장했을 때 호출됩니다.
     public override void OnJoinedRoom()
     {
-        Debug.Log("1. 방에 입장했습니다.");
+        Debug.Log("방에 입장했습니다.");
         PhotonNetwork.LoadLevel("GameScene");
-        Debug.Log("2. 방에 입장했습니다.");
         findRoomAnnounce.text = "";
     }
 

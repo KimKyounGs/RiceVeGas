@@ -12,6 +12,10 @@ public class Player
     
     [Tooltip("ео")]
     bool _turn;
-
-    
+    Player(string name, Dice dice, bool turn)
+    {
+        _name = name;
+        _dice = dice;
+        _turn = turn;
+    }
 }

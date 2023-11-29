@@ -22,7 +22,7 @@ public class PlayerManager : MonoBehaviourPun
         }
     }
 
-    private void Update()
+    public void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
         {
@@ -31,25 +31,16 @@ public class PlayerManager : MonoBehaviourPun
     }
 
     [PunRPC]
-    void DisplayMessage(string message)
+    public void DisplayMessage(string message)
     {
         Debug.Log("Received message: " + message);
     }
 
     void Spawn()
     {
-        PhotonView[] photonViews = FindObjectsOfType<PhotonView>();
-        int playerCount = 0;
+        int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
+        Debug.Log("현재 방의 플레이어 수: " + playerCount);
 
-        foreach (var view in photonViews)
-        {
-            if (view.IsMine)
-            {
-                playerCount++;
-            }
-        }
-
-        Debug.Log("현재 씬에 있는 플레이어 수: " + playerCount);
     }
     
 }

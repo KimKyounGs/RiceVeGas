@@ -1868,6 +1868,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87aa0405f1eaa14ca7e0c984430778f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 0}
   Button: {fileID: 1092085181}
   startPanel: {fileID: 1745057818}
   InGamePanel: {fileID: 460369956}
@@ -3205,7 +3206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ca8db70bed7d47e58fefeb316304085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PV: {fileID: 0}
+  PV: {fileID: 1828792135}
 --- !u!114 &1828792134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3539,6 +3540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87aa0405f1eaa14ca7e0c984430778f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  photonView: {fileID: 0}
   Button: {fileID: 1996428537}
   startPanel: {fileID: 678208677}
   InGamePanel: {fileID: 0}

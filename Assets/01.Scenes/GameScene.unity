@@ -1788,6 +1788,7 @@ GameObject:
   - component: {fileID: 1092085184}
   - component: {fileID: 1092085183}
   - component: {fileID: 1092085185}
+  - component: {fileID: 1092085186}
   m_Layer: 5
   m_Name: BackImage
   m_TagString: Untagged
@@ -1868,11 +1869,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e87aa0405f1eaa14ca7e0c984430778f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PV: {fileID: 0}
+  PV: {fileID: 1092085186}
   Button: {fileID: 1092085181}
   startPanel: {fileID: 1745057818}
   ReadyPanel: {fileID: 678208677}
   InGamePanel: {fileID: 460369956}
+--- !u!114 &1092085186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1092085181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1100125204
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,14 +12,12 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviourPun
 {
     List<Player> playerList = new List<Player>();
-    public static int count = 0;
+
     private void Start()
     {
-        PlayerManager[] scripts = FindObjectsOfType<PlayerManager>();
-        Debug.Log("씬에 존재하는 MyScript 개수: " + scripts[0]);
         if (PhotonNetwork.IsConnectedAndReady)
         {
-            Debuging();
+            Spawn();
         }
     }
 
@@ -36,10 +34,20 @@ public class PlayerManager : MonoBehaviourPun
     {
         Debug.Log("Received message: " + message);
     }
-       
-    void Debuging()
+    void Spawn()
     {
-        count++;
-        Debug.Log("count = " + count);
+        PhotonView[] photonViews = FindObjectsOfType<PhotonView>();
+        int playerCount = 0;
+
+        foreach (var view in photonViews)
+        {
+            if (view.IsMine)
+            {
+                playerCount++;
+            }
+        }
+
+        Debug.Log("현재 씬에 있는 플레이어 수: " + playerCount);
     }
+    
 }

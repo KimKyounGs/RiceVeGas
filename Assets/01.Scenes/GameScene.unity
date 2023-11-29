@@ -1787,8 +1787,6 @@ GameObject:
   - component: {fileID: 1092085182}
   - component: {fileID: 1092085184}
   - component: {fileID: 1092085183}
-  - component: {fileID: 1092085185}
-  - component: {fileID: 1092085186}
   m_Layer: 5
   m_Name: BackImage
   m_TagString: Untagged
@@ -1857,45 +1855,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1092085181}
   m_CullTransparentMesh: 1
---- !u!114 &1092085185
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092085181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87aa0405f1eaa14ca7e0c984430778f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PV: {fileID: 1092085186}
-  Button: {fileID: 1092085181}
-  startPanel: {fileID: 1745057818}
-  ReadyPanel: {fileID: 678208677}
-  InGamePanel: {fileID: 460369956}
---- !u!114 &1092085186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1092085181}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObservedComponentsFoldoutOpen: 1
-  Group: 0
-  prefixField: -1
-  Synchronization: 3
-  OwnershipTransfer: 0
-  observableSearch: 2
-  ObservedComponents: []
-  sceneViewId: 2
-  InstantiationId: 0
-  isRuntimeInstantiated: 0
 --- !u!1 &1100125204
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,6 +3131,7 @@ GameObject:
   - component: {fileID: 1828792133}
   - component: {fileID: 1828792134}
   - component: {fileID: 1828792135}
+  - component: {fileID: 1828792136}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -3255,6 +3215,23 @@ MonoBehaviour:
   sceneViewId: 1
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &1828792136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828792130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87aa0405f1eaa14ca7e0c984430778f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PV: {fileID: 1828792135}
+  Button: {fileID: 1092085181}
+  startPanel: {fileID: 1745057818}
+  ReadyPanel: {fileID: 678208677}
+  InGamePanel: {fileID: 460369956}
 --- !u!1 &1830412993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,7 +3331,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1919280251}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3679,7 +3656,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1092085185}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GameStartUIButton, Assembly-CSharp
         m_MethodName: ExitGameHandler
         m_Mode: 1

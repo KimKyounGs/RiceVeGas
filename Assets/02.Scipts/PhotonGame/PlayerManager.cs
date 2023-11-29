@@ -12,7 +12,7 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviourPun
 {
     List<Player> playerList = new List<Player>();
-    int count = 0;
+    public static int count = 0;
     private void Start()
     {
         Debug.Log("게임 접속 햇을 때");

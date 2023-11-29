@@ -7,13 +7,13 @@ public class GameStartUIButton : MonoBehaviour
 {
     public GameObject Button;
     public GameObject startPanel;
-    public GameObject gamePlayObject;
+    //public GameObject gamePlayObject;
 
     public void StartGameHandler()
     {
         startPanel.SetActive(false);
-        StartManager gamePlayScript = gamePlayObject.GetComponent<StartManager>();
-        gamePlayScript.ResumeTime();
+        //StartManager gamePlayScript = gamePlayObject.GetComponent<StartManager>();
+        //gamePlayScript.ResumeTime();
     }
 
     public void ExitGameHandler()

@@ -1187,7 +1187,7 @@ RectTransform:
   m_Children:
   - {fileID: 1100125205}
   m_Father: {fileID: 1919280252}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1554,7 +1554,7 @@ GameObject:
   - component: {fileID: 678208679}
   m_Layer: 5
   m_Name: GameReadyUI
-  m_TagString: Untagged
+  m_TagString: ReadyPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1870,7 +1870,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 1092085181}
   startPanel: {fileID: 1745057818}
-  gamePlayObject: {fileID: 0}
+  InGamePanel: {fileID: 460369956}
 --- !u!1 &1100125204
 GameObject:
   m_ObjectHideFlags: 0
@@ -2956,7 +2956,7 @@ RectTransform:
   - {fileID: 304933130}
   - {fileID: 577115513}
   m_Father: {fileID: 1919280252}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3180,7 +3180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cff51847c3094ea68592d7c7aa314c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dice: []
 --- !u!114 &1828792133
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3311,8 +3310,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1745057822}
   - {fileID: 460369960}
+  - {fileID: 1745057822}
   - {fileID: 678208678}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -3506,7 +3505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Button: {fileID: 1996428537}
   startPanel: {fileID: 678208677}
-  gamePlayObject: {fileID: 0}
+  InGamePanel: {fileID: 0}
 --- !u!114 &1996428540
 MonoBehaviour:
   m_ObjectHideFlags: 0
